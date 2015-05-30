@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>HKUSPACE BLOG</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">HKUSPACE BLOG</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="starter-template"><br />
+      </div>
+      <div class="starter-template"><br />
+      </div>
+      <div class="starter-template"><br />
+      </div>
+
+      <div class="starter-template">
+        <p class="lead">BLOG Posts</p>
+      </div>
+
+    </div><!-- /.container -->
+    <div class="container">
+        <p class="lead"><a href="/post/add">Add post</a></p>
+<table class="table table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+	<th>Action</th>
+        <th>Created</th>
+    </tr>
+    <!-- Here is where we loop through our $posts array, printing out post info -->
+<% if (data.length) {
+     for(var i=0;i < data.length;i++) { %>                 
+    <tr>
+        <td><%=data[i].id%></td>
+        <td><a href="/post/view/<%=data[i].id%>"><%=data[i].title%></a></td>
+	<td><a href="/comment/<%=data[i].id%>">Comment</a> <a href="/post/edit/<%=data[i].id%>">Edit</a> <a href="/post/delete/<%=data[i].id%>">Delete</a></td>
+        <td><%=data[i].created%></td>
+    </tr>
+<%   }
+   } %>
+
+</table>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/bootstrap/js/jquery-2.1.3.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
